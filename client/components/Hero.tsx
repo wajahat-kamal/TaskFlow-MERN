@@ -7,9 +7,9 @@ export default function HeroSection() {
 
                 {/* Badge */}
                 <div
-                    className="inline-flex items-center gap-2 bg-(--primary)/20 border border-(--primary) rounded-full px-4 py-1.5 text-[13px] text-(--primary) font-medium mb-7" >
-                    <span className="badge-dot w-2 h-2 rounded-full bg- inline-block" />
-                    Powered by GPT-4o · Now in Public Beta
+                    className="inline-flex items-center gap-2 bg-(--color-primary)/20 border border-(--color-primary) rounded-full px-4 py-1.5 text-[13px] text-(--color-primary) font-medium mb-7" >
+                    <span className="badge-dot w-2 h-2 rounded-full bg-(--color-primary) inline-block" />
+                    Powered by GPT-4o
                 </div>
 
                 {/* Headline */}
