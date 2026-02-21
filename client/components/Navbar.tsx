@@ -41,7 +41,7 @@ function Navbar() {
                 {/* Desktop Signup Button */}
                 <a
                     href="/signup"
-                    className="hidden md:inline-block bg-[#656FE4] text-white px-5 py-2 rounded-full border-2 hover:text-[#656FE4] hover:bg-[#000310] border-[#656FE4] transition"
+                    className="hidden md:inline-block bg-(--color-primary) text-white px-5 py-2 rounded-full border-2 hover:text-(--color-primary) hover:bg-[#000310] border-(--color-primary) transition"
                 >
                     Signup
                 </a>
@@ -78,7 +78,7 @@ function Navbar() {
                         <a
                             href="/signup"
                             onClick={() => setIsOpen(false)}
-                            className="block w-full text-center bg-[#656FE4] text-white font-semibold px-5 py-2 rounded-full hover:bg-[#000310] transition"
+                            className="block w-full text-center bg-(--color-primary) text-white font-semibold px-5 py-2 rounded-full hover:bg-[#000310] transition"
                         >
                             Signup
                         </a>

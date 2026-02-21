@@ -29,7 +29,7 @@ export default function HeroSection() {
                 <div
                     className="flex gap-3 mt-6 flex-wrap justify-center" >
                     <button
-                        className="flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white font-bold px-8 py-3.5 rounded-xl text-[15px] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(79,126,255,0.5)]"
+                        className="flex items-center gap-2 bg-(--color-primary) hover:bg-blue-400 text-white font-bold px-8 py-3.5 rounded-xl text-[15px] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(79,126,255,0.5)]"
                         style={{ boxShadow: "0 0 30px rgba(79,126,255,0.4)" }}
                     >
                         Get Started Free
