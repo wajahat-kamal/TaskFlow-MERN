@@ -59,9 +59,8 @@ function Navbar() {
             {/* Mobile Sidebar / Dropdown */}
             <div
                 className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-                    }`}
-            >
-                <ul className="flex flex-col gap-4 px-6 py-6 bg-gray-800">
+            }`} >
+                <ul className="flex flex-col gap-4 px-6 py-6 bg-[#040b29]">
                     {nav_items.map((item, index) => (
                         <li key={index}>
                             <a
