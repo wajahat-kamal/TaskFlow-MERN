@@ -12,6 +12,7 @@ app.use(cookieParser());
 app.use('/api/auth', authRouter);
 app.use('/api/tasks', protect, taskRouter);
 
+
 app.get("/", (req, res) => {
     res.json("Hello World!")
 })
