@@ -1,3 +1,4 @@
+import AboutSection from "@/components/About";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
@@ -7,6 +8,7 @@ export default function Home() {
     <div className="bg-[#000310]">
       <Navbar />
       <Hero />
+      <AboutSection/>
     </div>
   );
 }
