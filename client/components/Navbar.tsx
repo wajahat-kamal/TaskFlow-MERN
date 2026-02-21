@@ -1,8 +1,11 @@
+import { Menu, X } from 'lucide-react';
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 function Navbar() {
-    const nav_items = ["Home", "About", "Tasks", "Pricing", "Products"]
+    const nav_items = ["Home", "About", "Tasks", "Pricing", "Products"];
+
+    const [isOpen, setIsOpen] = useState(false)
     return (
         <nav className='bg-[#000310] w-full h-20 flex items-center justify-between px-6 md:px-30 py-4'>
             <a href='#' className='flex justify-center items-center gap-2'>
@@ -18,8 +21,10 @@ function Navbar() {
                     ))}
                 </ul>
                 <button className='bg-[#656FE4] px-6 py-2.5 rounded-4xl text-md'>Signup</button>
-                <aside className='md:hidden block'>hey</aside>
-
+                <div className='md:hidden block'>
+                    {isOpen ? <X/> : <Menu/>}
+                </div>
+                {isOpen && <aside className='md:hidden block'>hey</aside>}
             </div>
         </nav>
     )
