@@ -1,24 +1,15 @@
-import express, { Application } from 'express';
+import express from 'express';
 import cookieParser from 'cookie-parser';
 import authRouter from './routes/auth.route.js';
-import { protect } from './middlewares/protect.middleware.js';
 import taskRouter from './routes/task.route.js';
+import { protect } from './middlewares/protect.middleware.js';
 
-const app: Application = express();
+const app = express();
 
-app.use(cookieParser())
 app.use(express.json());
+app.use(cookieParser());
 
-app.use("/api/auth/", authRouter)
-app.use("/api/tasks/", protect, taskRouter)
-
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
-
-app.get('/protect', protect, (req, res) => {
-    res.send('Protected Route!');
-});
-
+app.use('/api/auth', authRouter);
+app.use('/api/tasks', protect, taskRouter);
 
 export default app;
