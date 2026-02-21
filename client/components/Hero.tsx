@@ -10,7 +10,7 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <header className="font-dm bg-[#050920] text-[#F0F4FF] min-h-screen overflow-x-hidden relative">
+        <header className="bg-[#050920] text-[#F0F4FF] min-h-screen overflow-x-hidden relative">
 
             {/* ── BACKGROUND ── */}
             {/* <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -31,7 +31,7 @@ export default function HeroSection() {
             </div> */}
 
             {/* ── HERO ── */}
-            <section className="relative z-10 flex flex-col items-center justify-center text-center px-6 pt-32 pb-20 min-h-screen">
+            <section className="relative z-10 flex flex-col items-center justify-center text-center px-6 pt-16 pb-20 min-h-screen">
 
                 {/* Badge */}
                 <div
@@ -44,18 +44,16 @@ export default function HeroSection() {
 
                 {/* Headline */}
                 <h1
-                    className={`fade-up ${mounted ? "show" : ""} font-syne font-extrabold leading-[1.07] tracking-[-2px] max-w-[820px] text-[clamp(40px,6vw,76px)]`}
-                    style={{ transitionDelay: "0.25s" }}
+                    className="text-6xl max-w-[830px]"
                 >
-                    Manage Tasks Smarter<br />
-                    with <span className="shimmer-text">AI That Works</span><br />
+                    Manage Tasks Smarter
+                    with AI That Works
                     For You
                 </h1>
 
                 {/* Subtext */}
                 <p
-                    className={`fade-up ${mounted ? "show" : ""} mt-5 text-[#6B7A99] max-w-[540px] leading-[1.75] text-[clamp(15px,1.5vw,18px)]`}
-                    style={{ transitionDelay: "0.4s" }}
+                    className="mt-5 text-[#6B7A99] max-w-[540px] leading-[1.75] text-lg"
                 >
                     Taskify learns your workflow, auto-assigns priorities, and keeps your
                     team perfectly in sync — so you can focus on what actually matters.
