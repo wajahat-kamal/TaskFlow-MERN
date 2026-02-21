@@ -1,7 +1,8 @@
 "use client"
+
 import { Menu, X } from 'lucide-react';
-import Image from 'next/image'
-import React, { useState } from 'react'
+import Image from 'next/image';
+import React, { useState } from 'react';
 
 function Navbar() {
     const nav_items = [
@@ -9,62 +10,84 @@ function Navbar() {
         { name: "About", href: "#about" },
         { name: "Pricing", href: "#menu" },
         { name: "Products", href: "#reviews" },
-    ]
+    ];
 
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
-        <nav className='bg-[#000310] w-full h-20 flex items-center justify-between px-6 md:px-30 py-4'>
-            <a href='#' className='flex justify-center items-center gap-2'>
-                <Image src="/logo.png" alt="logo" width={40} height={40} className='rounded' />
-                <h1 className='text-2xl text-[#656FE4]'>TASKIFY</h1>
-            </a>
-            <div className='flex justify-between items-center md:w-[100%] w-34'>
-                <ul className='hidden md:flex w-full justify-center items-center gap-8'>
+        <nav className="shadow-md relative z-50">
+            {/* Desktop Navbar */}
+            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+                {/* Logo */}
+                <a href="/" className="text-[#656FE4] text-2xl font-extrabold tracking-widest flex justify-center items-center gap-2">
+                <Image src="/logo.png" width={40} height={40} className='rounded' alt="logo"/>
+                    TASKIFY
+                </a>
+
+                {/* Desktop Links */}
+                <ul className="hidden md:flex items-center gap-8">
                     {nav_items.map((item, index) => (
-                        <li key={item.name + index}>
+                        <li key={index}>
                             <a
                                 href={item.href}
-                                onClick={() => setIsOpen(false)}
-                                className="block text-white text-lg font-medium hover:text-yellow-400 transition"
+                                className="text-white text-base font-medium hover:text-[#656FE4] transition"
                             >
                                 {item.name}
                             </a>
                         </li>
                     ))}
                 </ul>
-                <button className='bg-[#656FE4] px-6 py-2.5 rounded-4xl text-md'>Signup</button>
-                <div>{isOpen ? (
-                    <button onClick={() => setIsOpen(false)}><X/></button>
-                ) : (
-                    <button onClick={() => setIsOpen(true)}><Menu/></button>
-                )}</div>
 
-                <aside
-                    className={`fixed top-0 right-0 h-full w-72 bg-[#0B111E] backdrop-blur-md shadow-2xl transform transition-transform duration-300 ease-in-out z-60 ${isOpen ? "translate-x-0" : "translate-x-full"
-                        }`}
+                {/* Desktop Signup Button */}
+                <a
+                    href="/signup"
+                    className="hidden md:inline-block bg-[#656FE4] text-gray-900 font-semibold px-5 py-2 rounded-full hover:bg-yellow-300 transition"
                 >
-                    {/* Links */}
-                    <nav className="mt-10 flex-1">
-                        <ul className="flex flex-col space-y-6">
-                            {nav_items.map((item, index) => (
-                                <li key={item.name + index}>
-                                    <a
-                                        href={item.href}
-                                        onClick={() => setIsOpen(false)}
-                                        className="block text-white text-lg font-medium hover:text-yellow-400 transition"
-                                    >
-                                        {item.name}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
+                    Signup
+                </a>
 
+                {/* Mobile Menu Toggle */}
+                <button
+                    className="md:hidden text-white focus:outline-none"
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Toggle menu"
+                >
+                    {isOpen ? <X size={28} /> : <Menu size={28} />}
+                </button>
+            </div>
 
-                </aside>
+            {/* Mobile Sidebar / Dropdown */}
+            <div
+                className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                    }`}
+            >
+                <ul className="flex flex-col gap-4 px-6 py-6 bg-gray-800">
+                    {nav_items.map((item, index) => (
+                        <li key={index}>
+                            <a
+                                href={item.href}
+                                onClick={() => setIsOpen(false)}
+                                className="block text-white text-lg font-medium hover:text-[#656FE4] transition"
+                            >
+                                {item.name}
+                            </a>
+                        </li>
+                    ))}
+
+                    {/* ✅ Mobile Signup Button */}
+                    <li className="mt-2">
+                        <a
+                            href="/signup"
+                            onClick={() => setIsOpen(false)}
+                            className="block w-full text-center bg-[#656FE4] text-gray-900 font-semibold px-5 py-2 rounded-full hover:bg-yellow-300 transition"
+                        >
+                            Signup
+                        </a>
+                    </li>
+                </ul>
             </div>
         </nav>
-    )
+    );
 }
 
-export default Navbar
+export default Navbar;
