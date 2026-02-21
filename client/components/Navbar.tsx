@@ -3,7 +3,7 @@ import React from 'react'
 function Navbar() {
     const nav_items = ["Home", "About", "Tasks"]
     return (
-        <nav className='w-full h-20 flex items-center justify-between px-20 py-4'>
+        <nav className='bg-[#050920] w-full h-20 flex items-center justify-between px-20 py-4'>
             <div>
                 <img src="" alt="logo" />
                 <h1>Taskify</h1>
